@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>3D Classroom</title>
+  <script src="https://aframe.io/releases/1.4.0/aframe.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/gh/donmccurdy/aframe-extras/dist/aframe-extras.loaders.min.js"></script>
+</head>
+<body>
+  <a-scene>
+    <!-- Lighting -->
+    <a-light type="ambient" intensity="0.5" color="#ffffff"></a-light>
+    <a-light type="point" position="0 4 0" intensity="1" color="#ffffff"></a-light>
+
+    <!-- Classroom Cube (the entire room is inside this cube) -->
+    <a-box 
+      position="0 2.5 0" 
+      depth="10" 
+      width="10" 
+      height="5" 
+      material="color: #696969; shader: standard; side: double">
+      <!-- Windows on the right wall -->
+      <a-plane position="4.9 0.5 3" width="2" height="3" rotation="0 -90 0" src="sky.jpg"></a-plane>
+      <a-plane position="4.9 0.5 -3" width="2" height="3" rotation="0 -90 0" src="sky.jpg"></a-plane>
+      <a-plane position="4.9 0.5 0" width="2" height="3" rotation="0 -90 0" src="sky.jpg"></a-plane>
+    
+    </a-box>
+
+      <!-- Desks and Chairs -->
+      <!-- Row 1 -->
+      <a-entity position="-3 0 -3">
+        <!-- Desk 1 -->
+        <a-entity gltf-model="url(models/Computer Desk.glb)" scale="1.2 1.2 0.7" position="1 0 2" rotation="0 0 0"></a-entity>
+        <!-- Desk 2 -->
+        <a-entity gltf-model="url(models/Computer Desk.glb)" scale="1.2 1.2 0.7" position="6 0 2" rotation="0 0 0"></a-entity>
+        <!-- Chair 1 -->
+        <a-entity gltf-model="url(models/chair.gltf)" scale="0.9 0.8 0.9" position="0 0 1.2" rotation="0 0 0"></a-entity>
+        <!-- Chair 2 -->
+        <a-entity gltf-model="url(models/chair.gltf)" scale="0.9 0.8 0.9" position="0.9 0 1.2" rotation="0 0 0"></a-entity>
+        <!-- Chair 3 -->
+        <a-entity gltf-model="url(models/chair.gltf)" scale="0.9 0.8 0.9" position="5 0 1.2" rotation="0 0 0"></a-entity>
+        <!-- Chair 4 -->
+        <a-entity gltf-model="url(models/chair.gltf)" scale="0.9 0.8 0.9" position="5.9 0 1.2" rotation="0 0 0"></a-entity>
+      </a-entity>
+
+      <!-- Row 2 -->
+      <a-entity position="-3 0 -5">
+        <!-- Desk 3 -->
+        <a-entity gltf-model="url(models/Computer Desk.glb)" scale="1.2 1.2 0.7" position="1 0 7" rotation="0 0 0"></a-entity>
+        <!-- Desk 4 -->
+        <a-entity gltf-model="url(models/Computer Desk.glb)" scale="1.2 1.2 0.7" position="6 0 7" rotation="0 0 0"></a-entity>
+        <!-- Chair 5 -->
+        <a-entity gltf-model="url(models/chair.gltf)" scale="0.9 0.8 0.9" position="0 0 6.2" rotation="0 0 0"></a-entity>
+        <!-- Chair 6 -->
+        <a-entity gltf-model="url(models/chair.gltf)" scale="0.9 0.8 0.9" position="0.9 0 6.2" rotation="0 0 0"></a-entity>
+        <!-- Chair 7 -->
+        <a-entity gltf-model="url(models/chair.gltf)" scale="0.9 0.8 0.9" position="5 0 6.2" rotation="0 0 0"></a-entity>
+        <!-- Chair 8 -->
+        <a-entity gltf-model="url(models/chair.gltf)" scale="0.9 0.8 0.9" position="5.9 0 6.2" rotation="0 0 0"></a-entity>
+      </a-entity>
+    </a-box>
+
+    <!-- Camera -->
+    <a-camera position="0 0.8 5" wasd-controls="enabled: true"></a-camera>
+
+  </a-scene>
+</body>
+</html>
